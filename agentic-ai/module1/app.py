@@ -166,7 +166,7 @@ if _AGENTCORE:
 # Fallback: minimal HTTP server (no AgentCore installed)
 # ---------------------------------------------------------------------------
 
-def _run_fallback(host: str = "0.0.0.0", port: int = 8080) -> None:
+def _run_fallback(host: str = "127.0.0.1", port: int = 8080) -> None:
     """Plain HTTP server that mirrors the AgentCore /invocations interface."""
     from http.server import BaseHTTPRequestHandler, HTTPServer
 

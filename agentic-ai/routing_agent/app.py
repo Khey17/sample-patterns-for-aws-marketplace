@@ -21,7 +21,7 @@ from routing_agent.agent import classify_intent, route_request
 # ---------------------------------------------------------------------------
 
 PORT = int(os.getenv("ROUTING_PORT", "8083"))
-HOST = os.getenv("ROUTING_HOST", "0.0.0.0")
+HOST = os.getenv("ROUTING_HOST", "127.0.0.1")
 VERBOSE = os.getenv("ROUTING_VERBOSE", "false").lower() == "true"
 
 
@@ -166,7 +166,8 @@ def run_server(port: int = PORT, host: str = HOST) -> None:
     port : int
         Port to listen on. Default 8083.
     host : str
-        Host to bind to. Default "0.0.0.0".
+        Host to bind to. Default "127.0.0.1" (localhost only).
+        Set ROUTING_HOST=0.0.0.0 to bind to all interfaces.
     """
     server = HTTPServer((host, port), RoutingHandler)
     print(f"""

@@ -276,7 +276,11 @@ class A2AClient:
         )
 
         try:
-            with urllib.request.urlopen(req, timeout=60) as resp:
+            if not url.startswith(("http://", "https://")):
+                raise ValueError(
+                    f"Invalid URL scheme for A2A call: {url[:50]}. Only http:// and https:// are allowed."
+                )
+            with urllib.request.urlopen(req, timeout=60) as resp:  # nosec B310
                 raw = resp.read().decode("utf-8")
                 result = json.loads(raw)
                 # Wrap in standard format so downstream code works consistently

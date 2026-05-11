@@ -133,14 +133,15 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(payload)
 
 
-def run_server(host: str = "0.0.0.0", port: int = 8081) -> None:
+def run_server(host: str = "127.0.0.1", port: int = 8081) -> None:
     """
     Run the HTTP server.
 
     Parameters
     ----------
     host : str
-        Host to bind to. Default: 0.0.0.0 (all interfaces)
+        Host to bind to. Default: 127.0.0.1 (localhost only).
+        Set to 0.0.0.0 explicitly to bind to all interfaces.
     port : int
         Port to listen on. Default: 8081 (different from Module 1's 8080)
     """

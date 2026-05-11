@@ -45,3 +45,9 @@ pytest>=8.0.0
 patronus>=0.1.0                 # Patronus AI evaluation
 deepchecks>=0.18.0              # Deepchecks LLM testing
 comet-ml>=3.35.0                # Comet ML experiment tracking
+
+# ── Module 5: Domain-Specific Agent Applications ──────────────────────────────
+algoliasearch>=4.0.0              # Algolia AI Search SDK (customer domain)
+deepgram-sdk>=3.0.0               # Deepgram Voice AI SDK (voice domain)
+mapbox>=0.18.0                    # Mapbox SDK (geospatial domain)
+requests>=2.31.0                  # HTTP client for Mapbox REST API

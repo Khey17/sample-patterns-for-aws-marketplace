@@ -21,7 +21,7 @@ from module3.agent import create_agent, generate_infrastructure, validate_cdk_co
 # ---------------------------------------------------------------------------
 
 PORT = int(os.getenv("MODULE3_PORT", "8082"))
-HOST = os.getenv("MODULE3_HOST", "0.0.0.0")
+HOST = os.getenv("MODULE3_HOST", "127.0.0.1")
 VERBOSE = os.getenv("MODULE3_VERBOSE", "false").lower() == "true"
 
 
@@ -213,7 +213,8 @@ def run_server(port: int = PORT, host: str = HOST) -> None:
     port : int
         Port to listen on. Default 8082.
     host : str
-        Host to bind to. Default "0.0.0.0".
+        Host to bind to. Default "127.0.0.1" (localhost only).
+        Set MODULE3_HOST=0.0.0.0 to bind to all interfaces.
     """
     server = HTTPServer((host, port), Module3Handler)
     print(f"""
