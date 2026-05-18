@@ -51,3 +51,9 @@ algoliasearch>=4.0.0              # Algolia AI Search SDK (customer domain)
 deepgram-sdk>=3.0.0               # Deepgram Voice AI SDK (voice domain)
 mapbox>=0.18.0                    # Mapbox SDK (geospatial domain)
 requests>=2.31.0                  # HTTP client for Mapbox REST API
+
+# ── Module 6: Temporal Orchestration (optional) ───────────────────────────────
+# Note: These are optional. The code falls back to mock mode if not installed.
+# Install these packages to enable real Temporal workflow orchestration:
+temporalio>=1.7.0                 # Temporal Python SDK
+httpx>=0.25.0                     # Async HTTP client for activity endpoints
